@@ -12,3 +12,8 @@ services:
         arguments: [~, Bordeux\Bundle\CronBundle\Entity\Cron\Log, BordeuxCronBundle:Admin/Cron/Log]
         tags:
             - { name: sonata.admin, manager_type: orm, show_in_dashboard : false, label: "Logs", group: "Settings"}
+
+    bordeux.cron.command.run:
+        class: Bordeux\Bundle\CronBundle\Command\CronCommand
+        tags:
+            - { name: console.command }
